@@ -1,0 +1,81 @@
+bachngx@bachngx-virtual-machine:~$ ls | grep list
+filelist
+bachngx@bachngx-virtual-machine:~$ wc /etc/passwd
+  41   72 2312 /etc/passwd
+bachngx@bachngx-virtual-machine:~$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4712MQ CPU @ 2.30GHz
+stepping	: 3
+microcode	: 0x1e
+cpu MHz		: 2301.000
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat
+bugs		:
+bogomips	: 4602.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4712MQ CPU @ 2.30GHz
+stepping	: 3
+microcode	: 0x1e
+cpu MHz		: 2301.000
+cache size	: 6144 KB
+physical id	: 2
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat
+bugs		:
+bogomips	: 4602.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management:
+
+bachngx@bachngx-virtual-machine:~$ cat /proc/cpuinfo | grep "core"
+core id		: 0
+cpu cores	: 1
+core id		: 0
+cpu cores	: 1
+bachngx@bachngx-virtual-machine:~$ find Pictures -name "*jpg" | wc -1
+wc: invalid option -- '1'
+Try 'wc --help' for more information.
+bachngx@bachngx-virtual-machine:~$ find Pictures -name "*jpg" | wc -l
+0
+bachngx@bachngx-virtual-machine:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:        2027080     1586620      141268       37472      299192      210316
+Swap:       2094076      144000     1950076
+bachngx@bachngx-virtual-machine:~$ cd os2018
+bachngx@bachngx-virtual-machine:~/os2018$ 
+bachngx@bachngx-virtual-machine:~/os2018$ cd
+bachngx@bachngx-virtual-machine:~$ free | grep Mem:
+Mem:        2027080     1586560      113704       44444      326816      203380
+bachngx@bachngx-virtual-machine:~$ free -h| grep Mem: | awk '{print$2}'
+1.9G
+
