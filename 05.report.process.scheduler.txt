@@ -1,0 +1,37 @@
+bachngx@bachngx-virtual-machine:~$ cat /proc/sched_debug | grep systemd
+         systemd     1       343.029592      2543   120         0.000000      2162.764813         0.000000 0 0 /autogroup-2
+ systemd-journal   307        41.557229       716   120         0.000000       163.586322         0.000000 0 0 /autogroup-3
+   systemd-udevd   328      1275.927036      1187   120         0.000000      1101.643975         0.000000 0 0 /autogroup-10
+ systemd-timesyn   488        15.171877       103   120         0.000000        18.610438         0.000000 0 0 /autogroup-29
+  systemd-logind   778        12.502033       374   120         0.000000        38.322955         0.000000 0 0 /autogroup-39
+         systemd  1552        13.754571        21   120         0.000000        15.283570         0.000000 0 0 /autogroup-97
+bachngx@bachngx-virtual-machine:~$ cat /proc/1/sched
+systemd (1, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :       1563714.590489
+se.vruntime                                  :           343.344407
+se.sum_exec_runtime                          :          2163.079628
+se.nr_migrations                             :                   41
+nr_switches                                  :                 2546
+nr_voluntary_switches                        :                 1456
+nr_involuntary_switches                      :                 1090
+se.load.weight                               :              1048576
+se.avg.load_sum                              :               253952
+se.avg.util_sum                              :               100352
+se.avg.load_avg                              :                    0
+se.avg.util_avg                              :                    0
+se.avg.last_update_time                      :        1563714589696
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                   22
+mm->numa_scan_seq                            :                    0
+numa_pages_migrated                          :                    0
+numa_preferred_nid                           :                   -1
+total_numa_faults                            :                    0
+current_node=0, numa_group_id=0
+numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0
+bachngx@bachngx-virtual-machine:~$ cat /proc/1/sched | grep switches
+nr_switches                                  :                 2566
+nr_voluntary_switches                        :                 1475
+nr_involuntary_switches                      :                 1091
+
